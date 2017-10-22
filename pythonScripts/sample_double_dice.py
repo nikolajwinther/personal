@@ -13,38 +13,31 @@ def count_random_numbers(sample_size, dice_size):
     '''
     arr_count = []
     for i in range(sample_size):
+        print i, "from sample size:", sample_size #To keep track of script in the shell
         arr = []
-        for j in range(dice_size + 1):
+        while True:
             random_int = random.randint(1,dice_size)
-            #print(random_int)
             if arr.count(random_int) < 1:
                 arr.append(random_int)
             else:
                 arr_length = len(arr)
-                print(arr_length)
                 arr_count.append(arr_length)
                 break
     arr_count.sort()
-    #print(arr_count)
     output = {}
     output['numbers'] = []
     output['counts'] = []
     output['sample_name'] = "Sample size " + str(sample_size)
-    print "Sample: " + str(sample_size)
     for number in range(1, arr_count[-1] + 1):
         count = arr_count.count(number)
         output['numbers'].append(number)
         output['counts'].append(count)
-        print number,"\t",count
-    print
-    #return [numbers, counts, sample_name]
+
     return output
 
 #Set sample size and dice size here:
-sample_sizes = [10000000]
-#sample_sizes = [50000, 100000, 500000, 1000000]
-#sample_sizes = [500, 1000, 5000, 10000]
-dice_size = 10000
+sample_sizes = [50000, 100000, 500000, 1000000]
+dice_size = 100
 
 samples = []
 for size in sample_sizes:

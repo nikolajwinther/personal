@@ -13,10 +13,10 @@ def count_random_numbers(sample_size, dice_size):
     '''
     list_count = []
     for i in range(sample_size):
+        print i, "from sample size:", sample_size #To keep track of script in the shell
         list_numbers = []
         for j in range(dice_size**2):
             random_int = random.randint(1,dice_size)
-            print random_int
             list_numbers.append(random_int)
         for j in range(1, dice_size + 1):
             count = list_numbers.count(j)
@@ -37,7 +37,7 @@ def count_random_numbers(sample_size, dice_size):
     return output
 
 #Set sample size and dice size here:
-sample_sizes = [100, 200]
+sample_sizes = [50000, 100000, 500000, 1000000]
 dice_size = 100
 samples = []
 for sample_size in sample_sizes:
@@ -54,7 +54,7 @@ for sample in samples:
     )
     data.append(trace)
 
-plotly_filename = "Norm-dist-with-" + str(dice_size) + "-side-dice-v1"
+plotly_filename = "Norm-dist-with-" + str(dice_size) + "-side-dice-v0"
 py.iplot(data, filename=plotly_filename)
 
 
