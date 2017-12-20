@@ -1,0 +1,37 @@
+[
+{
+    "name": "Kenni Flink",
+    "votes": 168,
+    "party": "Alternativet",
+    "electionSystem": "Sideordnet opstillingsform",
+    "elected": 1,
+    "gender": "Male",
+    "tax": "25.60",
+    "electionTurnout": 66.07,
+    "municipalityName": "Albertslund",
+    "municipalityNumber": "165"
+}
+,
+{
+    "municipalityName": "Albertslund",
+    "municipalityNumber": "165",
+    "electionTurnout": 66.07,
+    "tax": 25.60,
+    "parties": 
+    [
+        {
+            "party": "Alternativet",
+            "electionSystem": "Sideordnet opstillingsform",
+            "persons": 
+            [
+                {
+                    "name": "Kenni Flink",
+                    "votes": 168,
+                    "gender": "Male",
+                    "elected": 1
+                }
+            ]
+        }
+    ]
+}
+]
