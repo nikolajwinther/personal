@@ -41,27 +41,31 @@ def count_random_numbers(sample_size, dice_size):
         else:
             rest.append(integer)
 
-    output['alls'] = alls
-    output['fail'] = fail
-    output['succes'] = succes
-    output['crit_fail'] = crit_fail
-    output['crit_plus'] = crit_plus
-    output['rest'] = rest
+    output['1 alls'] = alls
+    output['2 fail'] = fail
+    output['3 succes'] = succes
+    output['4 crit_fail'] = crit_fail
+    output['5 crit_plus'] = crit_plus
+    output['6 rest'] = rest
     
     return output
 
-#Set sample size and dice size here:
-sample_sizes = [200]
-dice_size = 100
+def main():
+    #Set sample size and dice size here:
+    sample_sizes = [200]
+    dice_size = 100
 
-samples = []
-for size in sample_sizes:
-    samples.append(count_random_numbers(size, dice_size))
+    samples = []
+    for size in sample_sizes:
+        samples.append(count_random_numbers(size, dice_size))
 
-for sample in samples:
-    print(sample['alls'])
-    keys = list(sample.keys())
-    keys.sort()
-    for key in keys:
-        print(key, len(sample[key]))
+    for sample in samples:
+        print(sample['1 alls'])
+        keys = list(sample.keys())
+        keys.sort()
+        for key in keys:
+            print(key, len(sample[key]))
+
+if __name__ == "__main__":
+    main()
 

@@ -35,24 +35,28 @@ def count_random_numbers(sample_size, dice_size):
 
     return output
 
-#Set sample size and dice size here:
-sample_sizes = [50000, 100000, 500000, 1000000]
-dice_size = 100
+def main():
+    #Set sample size and dice size here:
+    sample_sizes = [50000, 100000, 500000, 1000000]
+    dice_size = 100
 
-samples = []
-for size in sample_sizes:
-    samples.append(count_random_numbers(size, dice_size))
+    samples = []
+    for size in sample_sizes:
+        samples.append(count_random_numbers(size, dice_size))
 
-data = []
-for sample in samples:
-    trace = go.Scatter(
-        x = sample['numbers'],
-        y = sample['counts'],
-        mode = 'lines',
-        name = sample['sample_name']
-    )
-    data.append(trace)
+    data = []
+    for sample in samples:
+        trace = go.Scatter(
+            x = sample['numbers'],
+            y = sample['counts'],
+            mode = 'lines',
+            name = sample['sample_name']
+        )
+        data.append(trace)
 
-plotly_filename = "Test-with-" + str(dice_size) + "-side-dice-v0"
-py.iplot(data, filename=plotly_filename)
+    plotly_filename = "Test-with-" + str(dice_size) + "-side-dice-v0"
+    py.iplot(data, filename=plotly_filename)
+
+if __name__ == "__main__":
+    main()
 
