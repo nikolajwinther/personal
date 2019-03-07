@@ -2,9 +2,10 @@
 
 # Script that creates a tsv-file containing band name, short description in danish, day they play, link to RF page, and link to youtube page
 
-wget -c -O rf-lineup-20190305 "https://www.roskilde-festival.dk/da/line-up/"
+dato=$(date +%Y%m%d)
+wget -O rf-lineup-$dato "https://www.roskilde-festival.dk/da/line-up/"
 echo -e "Artist\tBeskrivelse\tDag\tRF-link\tYoutube" >beskrivelser.tsv
-for i in $(cat rf-lineup-20190305 | grep '<a href="/da/years/2019' | cut -d '"' -f2)
+for i in $(cat rf-lineup-$dato | grep '<a href="/da/years/2019' | cut -d '"' -f2)
 do
     band=$(echo $i | rev | cut -d "/" -f2 | rev | sed -e 's/&#248;/ø/g' -e 's/&#237;/í/g' -e 's/&#233;/é/g' -e 's/&#225;/á/g')
     wget -c -O band-$band "https://www.roskilde-festival.dk/da/years/2019/acts/$band/"
