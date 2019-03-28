@@ -21,3 +21,7 @@ do
     done
     sed -i 's/\&amp;/\&/g' $outputfile
 done
+
+
+# Output can also be found in a google sheet here:
+# https://docs.google.com/spreadsheets/d/1NaZkVu6AMMapr1oNOZ9YCUg8FYfs1qh_GZJ_5LgNDLc/edit?usp=sharing
